@@ -107,7 +107,7 @@ function createMenu() {
           {
             label: 'View on GitHub',
             click: () => {
-              shell.openExternal('http://github.com/andrepolischuk/keep');
+              shell.openExternal('http://github.com/codewithzaqar/keep');
             }
           },
         ]
