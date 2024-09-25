@@ -98,6 +98,40 @@ function createMenu() {
         submenu: [
           { label: 'Minimize', accelerator: 'CmdOrCtrl+M', role: 'minimize' },
           { label: 'Close', accelerator: 'CmdOrCtrl+W', role: 'close' },
+          { type: 'separator' },
+          {
+            label: 'Notes',
+            accelerator: 'CmdOrCtrl+1',
+            click: (item, win) => {
+              win.webContents.send('navigate', '')
+            },
+            type: 'radio',
+            checked: true
+          },
+          {
+            label: 'Reminders',
+            accelerator: 'CmdOrCtrl+2',
+            click: (item, win) => {
+              win.webContents.send('navigate', 'reminders')
+            },
+            type: 'radio'
+          },
+          {
+            label: 'Archive',
+            accelerator: 'CmdOrCtrl+3',
+            click: (item, win) => {
+              win.webContents.send('navigate', 'archive');
+            },
+            type: 'radio'
+          },
+          {
+            label: 'Trash',
+            accelerator: 'CmdOrCtrl+4',
+            click: (item, win) => {
+              win.webContents.send('navigate', 'trash');
+            },
+            type: 'radio'
+          }
         ]
       },
       {
@@ -109,7 +143,7 @@ function createMenu() {
             click: () => {
               shell.openExternal('http://github.com/codewithzaqar/keep');
             }
-          },
+          }
         ]
       }
     ];
