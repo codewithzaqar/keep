@@ -3,6 +3,8 @@ const app = require('electron').app
 const shell = require('electron').shell
 const BrowserWindow = require('electron').BrowserWindow
 const Menu = require('electron').Menu
+const objectAssign = require('object-assign')
+const pkg = require('./package.json')
 
 
 let mainWindow
